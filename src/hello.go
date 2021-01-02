@@ -2,10 +2,12 @@ package main
 
 import (
 	"fmt"
-	"forexam"
+	_ "forexam"
+	"functest"
 )
 
 func main() {
 	fmt.Println("hello, go")
-	forexam.Star2()
+	fmt.Printf("총합: %d\n", functest.Sum2(10, 0))
+	fmt.Printf("피보나치: %d\n", functest.Fibonacci(10))
 }

@@ -1,8 +1,8 @@
-package main
+package operator
 
 import "fmt"
 
-func main() {
+func Test() {
 	// 변수를 선언하는 다양한 방법
 	a := 4
 	b := 2

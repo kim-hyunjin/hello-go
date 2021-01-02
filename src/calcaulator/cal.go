@@ -1,4 +1,4 @@
-package main
+package calculator
 
 import (
 	"bufio"
@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-func main() {
+func Cal() {
 	fmt.Println("숫자를 입력하세요.")
 	reader := bufio.NewReader(os.Stdin)
 	line, _ := reader.ReadString('\n') // _ : 이름없는 변수(ReadString의 결과 중 하나를 처리하지 않고 받기만하려고 선언)

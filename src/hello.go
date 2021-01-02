@@ -7,5 +7,5 @@ import (
 
 func main() {
 	fmt.Println("hello, go")
-	forexam.Star()
+	forexam.Star2()
 }

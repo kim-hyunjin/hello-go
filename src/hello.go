@@ -1,13 +1,12 @@
 package main
 
 import (
-	"datastructure"
-	"fmt"
+	_ "datastructure"
 	_ "forexam"
 	_ "functest"
+	"pointer"
 )
 
 func main() {
-	fmt.Println("hello, go")
-	datastructure.Struct2()
+	pointer.Exam3()
 }

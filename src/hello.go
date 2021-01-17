@@ -9,5 +9,5 @@ import (
 
 func main() {
 	fmt.Println("hello, go")
-	datastructure.Sort2()
+	datastructure.Struct2()
 }

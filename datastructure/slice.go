@@ -13,3 +13,13 @@ func Slice1() {
 	fmt.Printf("len(c) = %d\n", len(c)) // 3
 	fmt.Printf("cap(c) = %d\n", cap(c)) // 8
 }
+
+func Slice2() {
+	var a []int
+	fmt.Printf("len(a) = %d\n", len(a)) // 0
+	fmt.Printf("cap(a) = %d\n", cap(a)) // 0
+	a = append(a, 1)
+	fmt.Printf("len(a) = %d\n", len(a)) // 0
+	fmt.Printf("cap(a) = %d\n", cap(a)) // 0
+
+}

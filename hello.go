@@ -8,5 +8,5 @@ import (
 )
 
 func main() {
-	datastructure.Slice1()
+	datastructure.Slice2()
 }

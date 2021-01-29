@@ -109,6 +109,36 @@ func SliceaSlice() {
 
 }
 
+func SliceDeepPractice() {
+	var s []int
+
+	s = make([]int, 3)
+	/*
+	  메모리에 int형 3개만큼의 주소를 준비하고,
+	  Slice struct를 만들어 pointer에 배열의 시작 주소, len과 cap에 3을 넣는다.
+	*/
+
+	s[0] = 100
+	s[1] = 200
+	s[2] = 300
+
+	fmt.Println(s, len(s), cap(s))
+	fmt.Printf("%p\n", s)
+
+	s = append(s, 400, 500, 600, 700)
+	/*
+		Slice stuct의 property인 cap, len을 사용해(cap - len) 빈 공간이 있는지 확인 후,
+		빈 공간이 없다면 새로운 배열을 만들고 새 Slice struct를 만들어 덮어쓴다.
+	*/
+
+	fmt.Println(s, len(s), cap(s))
+	fmt.Printf("%p\n", s)
+
+	s = append(s, 800)
+	fmt.Println(s, len(s), cap(s))
+	fmt.Printf("%p\n", s)
+}
+
 func RemoveBack(a []int) ([]int, int) {
 	return a[:len(a)-1], a[len(a)-1]
 }

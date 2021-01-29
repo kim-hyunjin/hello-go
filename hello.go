@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	datastructure.Slice2()
+	datastructure.SliceaSlice()
 }

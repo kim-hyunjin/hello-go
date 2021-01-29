@@ -1,10 +1,7 @@
 package main
 
 import (
-	"datastructure"
-	_ "forexam"
-	_ "functest"
-	_ "pointer"
+	"github.com/kim-hyunjin/hello-go/datastructure"
 )
 
 func main() {

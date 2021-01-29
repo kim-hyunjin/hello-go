@@ -1,12 +1,12 @@
 package main
 
 import (
-	_ "datastructure"
+	"datastructure"
 	_ "forexam"
 	_ "functest"
-	"pointer"
+	_ "pointer"
 )
 
 func main() {
-	pointer.Exam3()
+	datastructure.Slice1()
 }

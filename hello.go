@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	datastructure.SliceDeepPractice()
+	datastructure.InstanceTest()
 }

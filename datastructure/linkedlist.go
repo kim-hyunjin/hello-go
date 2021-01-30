@@ -6,81 +6,69 @@ type Node struct {
 	next *Node
 	val  int
 }
+type LinkedList struct {
+	root *Node
+	tail *Node
+}
 
-func LinkedListTest() {
-	var root *Node
-	var tail *Node
-	root = &Node{val: 0}
-	tail = root
-
-	// for i := 1; i < 10; i++ {
-	// 	AddNode(root, i)
-	// }
-
-	// PrintNode(root)
-
-	for i := 1; i < 10; i++ {
-		tail = AddNode2(tail, i)
+func (l *LinkedList) AddNode(val int) {
+	if l.root == nil {
+		l.root = &Node{val: val}
+		l.tail = l.root
+		return
 	}
-	PrintNode(root)
-
-	root, tail = RemoveNode(root.next, root, tail)
-	PrintNode(root)
-
-	root, tail = RemoveNode(root, root, tail)
-	PrintNode(root)
-
-	root, tail = RemoveNode(tail, root, tail)
-	PrintNode(root)
+	l.tail.next = &Node{val: val}
+	l.tail = l.tail.next
 }
 
-func AddNode(root *Node, val int) {
-	var tail *Node
-	tail = root
-	for tail.next != nil {
-		tail = tail.next
-	}
-
-	node := &Node{val: val}
-	tail.next = node
-}
-
-func AddNode2(tail *Node, val int) *Node {
-	node := &Node{val: val}
-	tail.next = node
-	return node
-}
-
-func RemoveNode(node *Node, root *Node, tail *Node) (*Node, *Node) {
-	if node == root {
-		root = root.next
-		if root == nil {
-			tail = nil
+func (l *LinkedList) RemoveNode(node *Node) {
+	if node == l.root {
+		l.root = l.root.next
+		if l.root == nil {
+			l.tail = nil
 		}
-		return root, tail
+		return
 	}
 
 	// 지울 노드의 이전 노드 찾기
-	prev := root
+	prev := l.root
 	for prev.next != node {
 		prev = prev.next
 	}
 
-	if node == tail {
+	if node == l.tail {
 		prev.next = nil
-		tail = prev
+		l.tail = prev
 	} else {
 		prev.next = node.next
 	}
-
-	return root, tail
 }
 
-func PrintNode(root *Node) {
-	node := root
+func (l *LinkedList) PrintNode() {
+	node := l.root
 	for node.next != nil {
 		fmt.Printf("%d -> ", node.val)
 		node = node.next
 	}
 	fmt.Printf("%d\n", node.val)
+}
+
+func LinkedListTest() {
+	list := &LinkedList{}
+	list.AddNode(0)
+
+	for i := 1; i < 10; i++ {
+		list.AddNode(i)
+	}
+
+	list.PrintNode()
+
+	list.RemoveNode(list.root)
+	list.PrintNode()
+
+	list.RemoveNode(list.tail)
+	list.PrintNode()
+
+	list.RemoveNode(list.root.next)
+	list.PrintNode()
 }

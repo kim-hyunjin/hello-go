@@ -67,3 +67,15 @@ Slice도 하나의 struct로 보면 된다.
 #### 기본자료구조
 배열, 링크드 리스트
 이 두가지 기본 구조로 스택, 큐, 트리, 그래프, 힙, 맵 등을 만들 수 있다.
+
+#### slice vs linked list
+```
+slice는 삽입 삭제 시 시간복잡도 O(n)
+double linked list는 O(1)
+
+하지만 조회의 경우 slice는 O(1)
+linked list는 O(n) : Random Access
+
+slice는 연속된 메모리 구조이므로 캐시에 올리기 좋음.(속도 향상)
+반면 linked list는 메모리상에 흩어져 있으므로 캐시 미스가 자주 발생할 수 있음.
+```

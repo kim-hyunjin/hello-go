@@ -2,7 +2,50 @@ package datastructure
 
 import "fmt"
 
-func DFSTest() {
+func BinaryTreeTest() {
+	tree := NewBinaryTree(5)
+	tree.Root.AddNode(3)
+	tree.Root.AddNode(2)
+	tree.Root.AddNode(4)
+	tree.Root.AddNode(8)
+	tree.Root.AddNode(7)
+	tree.Root.AddNode(6)
+	tree.Root.AddNode(10)
+	tree.Root.AddNode(9)
+
+	/*
+				5
+			 /\
+			3  8
+		 /\ /\
+		2 4 7 10
+			 /  /
+			6  9
+
+	*/
+	tree.Print()
+	fmt.Println()
+	for {
+		var inputNumbers int
+		_, err := fmt.Scanf("%d\n", &inputNumbers)
+		if err != nil {
+			fmt.Println("\n잘못 입력하셨습니다.")
+			continue
+		}
+
+		if inputNumbers == -1 {
+			break
+		}
+
+		if found, cnt := tree.Search(inputNumbers); found {
+			fmt.Println("\nfound, ", inputNumbers, "cnt: ", cnt)
+		} else {
+			fmt.Println("\nnot found, ", inputNumbers, "cnt: ", cnt)
+		}
+	}
+}
+
+func TreeTest() {
 	tree := Tree{}
 	val := 1
 	tree.AddNode(val)

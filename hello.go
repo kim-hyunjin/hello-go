@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	datastructure.DFSTest()
+	datastructure.BinaryTreeTest()
 }

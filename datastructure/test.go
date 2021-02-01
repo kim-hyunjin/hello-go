@@ -2,6 +2,21 @@ package datastructure
 
 import "fmt"
 
+func HeapTest() {
+	h := &Heap{}
+	h.Push(9)
+	h.Push(7)
+	h.Push(5)
+	h.Push(6)
+	h.Push(8)
+
+	h.Print()
+	fmt.Println(h.Pop())
+	fmt.Println(h.Pop())
+	fmt.Println(h.Pop())
+
+}
+
 func BinaryTreeTest() {
 	tree := NewBinaryTree(5)
 	tree.Root.AddNode(3)
@@ -14,13 +29,13 @@ func BinaryTreeTest() {
 	tree.Root.AddNode(9)
 
 	/*
-				5
-			 /\
-			3  8
-		 /\ /\
-		2 4 7 10
-			 /  /
-			6  9
+			5
+		        /\
+		       3  8
+		      /\ /\
+		     2 4 7 10
+			/  /
+		       6  9
 
 	*/
 	tree.Print()
@@ -63,11 +78,11 @@ func TreeTest() {
 		}
 	}
 	/*
-					1
-				/	|	\
-			2		3	 4
-		 /\	 /\  /\
-		5 6 7 8 9 10
+			1
+		      / | \
+		     2  3  4
+		   /\  /\  /\
+		  5 6 7 8 9 10
 	*/
 	fmt.Println("\nDFS with recursive call")
 	tree.DFS()

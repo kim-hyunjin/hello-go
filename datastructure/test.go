@@ -2,6 +2,49 @@ package datastructure
 
 import "fmt"
 
+func MinHeapTest() {
+	/* 알고리즘 문제
+	[-1, 3, -1, 5, 4] 배열에서 2번째로 큰 값 찾기
+	*/
+	h := &MinHeap{}
+	nums := []int{-1, 3, -1, 5, 4}
+	for i := 0; i < len(nums); i++ {
+		h.Push(nums[i])
+		if h.Count() > 2 {
+			h.Pop()
+		}
+	}
+	fmt.Println(h.Pop())
+
+	/*
+		Input: [2, 4, -2, -3, 8], 1
+		Output: 8
+	*/
+	h = &MinHeap{}
+	nums = []int{2, 4, -2, -3, 8}
+	for i := 0; i < len(nums); i++ {
+		h.Push(nums[i])
+		if h.Count() > 1 {
+			h.Pop()
+		}
+	}
+	fmt.Println(h.Pop())
+
+	/*
+		Input: [-5, -3, 1], 3
+		Output: -5
+	*/
+	h = &MinHeap{}
+	nums = []int{-5, -3, 1}
+	for i := 0; i < len(nums); i++ {
+		h.Push(nums[i])
+		if h.Count() > 3 {
+			h.Pop()
+		}
+	}
+	fmt.Println(h.Pop())
+}
+
 func HeapTest() {
 	h := &Heap{}
 	h.Push(9)

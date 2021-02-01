@@ -30,6 +30,8 @@ func DFSTest() {
 	tree.DFS()
 	fmt.Println("\nDFS with stack")
 	tree.DFSWithStack()
+	fmt.Println("\nBFS")
+	tree.BFS()
 }
 
 func StackTest() {

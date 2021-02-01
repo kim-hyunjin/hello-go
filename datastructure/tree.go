@@ -43,6 +43,19 @@ func (t *Tree) DFSWithStack() {
 	}
 }
 
+func (t *Tree) BFS() {
+	queue := []*TreeNode{}
+	queue = append(queue, t.Root)
+
+	for len(queue) > 0 {
+		var first *TreeNode
+		first, queue = queue[0], queue[1:]
+
+		fmt.Printf("%d->", first.Val)
+		queue = append(queue, first.Children...)
+	}
+}
+
 func DFS(node *TreeNode) {
 	fmt.Printf("%d->", node.Val)
 

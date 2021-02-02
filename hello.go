@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	thread.Test()
+	thread.AccountTest()
 }

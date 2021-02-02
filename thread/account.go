@@ -39,6 +39,22 @@ func Transfer(sender, receiver int, money int) {
 	accounts[sender].Widthdraw(money)
 	accounts[receiver].Deposit(money)
 	globalLock.Unlock()
+	fmt.Println("Transfer", sender, receiver, money)
+}
+
+func DeadLockTransfer(sender, receiver int, money int) {
+	// 아래와 같이 락을 잡으면 데드락에 빠지므로, 락을 잡을 때 작게 잡거나 크게 잡아야한다.
+	accounts[sender].mutex.Lock()
+	fmt.Println("lock", sender)
+	accounts[receiver].mutex.Lock()
+	fmt.Println("lock", receiver)
+
+	accounts[sender].Widthdraw(money)
+	accounts[receiver].Deposit(money)
+
+	accounts[receiver].mutex.Unlock()
+	accounts[sender].mutex.Unlock()
+	fmt.Println("Transfer", sender, receiver, money)
 }
 
 func GetTotalBalance() int {
@@ -102,4 +118,39 @@ func AccountTest() {
 		PrintTotalBalance()
 		time.Sleep(100 * time.Millisecond)
 	}
+}
+
+/*
+쓰레드1 lock 0, lock 1
+쓰레드2 lock 1, lock 0
+
+쓰레드1은 0을 잠그고 1을 잠그려고 하는데 1이 이미 다른 쓰레드로 인해 잠겨 있어서 lock이 풀릴때까지 대기한다.
+반대로 쓰레드2는 1을 잠그고 0을 잠그기 위해 0이 lock이 풀릴때까지 대기한다.
+쓰레드 1이 필요한 자원을 쓰레드 2가,
+쓰레드 2가 필요한 자원을 쓰레드 1이 잠그고 있어 서로 교착상태에 빠짐. ==> 데드락
+*/
+func DeadLockTest() {
+	for i := 0; i < 20; i++ {
+		accounts = append(accounts, &Account{balance: 1000, mutex: &sync.Mutex{}})
+	}
+	globalLock = &sync.Mutex{}
+
+	go func() {
+		for {
+			DeadLockTransfer(0, 1, 100)
+			// Transfer(0, 1, 100)
+		}
+	}()
+
+	go func() {
+		for {
+			DeadLockTransfer(1, 0, 100)
+			// Transfer(1, 0, 100)
+		}
+	}()
+
+	for {
+		time.Sleep(100 * time.Millisecond)
+	}
+
 }

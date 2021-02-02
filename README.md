@@ -227,5 +227,35 @@ Go에서는 인터페이스를 구현하고 있음을 명시적으로 표시하�
 
 최종 목표는 객체 간 의존성을 낮추고, 응집도는 높이기 위함이다.
 
+### Beyond OOP - Stateless
+OOP의 문제점 - 잘하기 어렵다. 빠르게 개발하기 힘들다.  
+이를 해결하기 위해 Stateless를 지향 -> 상태는 신경쓰지 않고 기능 위주로 개발 -> 많은 개발자들이 각자의 기능만 구현하면 됨  
+-> Micro Service, Serverless, Functional Language, ECS(Entity Component System), MVC 등으로 발전
+
+#### Functional Language
+erlang, lisp, scala, F#, Elixir 등  
+여기서 함수는 상태는 없고 기능만 있는 함수로, 같은 입력에 항상 같은 출력이 나온다.(기능만 신경쓰면 됨)  
+반면, 객체는 상태와 기능이 합쳐져 있기 때문에 객체의 상태에 따라, 같은 입력이어도 다른 출력이 나올 수 있다.  
+
+#### Micro Service
+ex) 하나의 웹페이지를 구성할 때, 한 페이지를 여러 파트로 나누고, 각 파트들도 여러 서비스로 나누어 따로 개발
+
+#### Serverless
+ex) 웹사이트가 잘게 나누어진 서버들을 취합해서 사용
+
+#### ECS
+Entity = Component의 모음  
+ex) Player 엔티티 - Move 컴포넌트, Attack 컴포넌트, Talk 컴포넌트 모음  
+컴포넌트는 데이터만 가지고 있어야 한다.  
+데이터와 기능이 분리되어 있기 때문에 OOP가 가진 문제를 해결한다.
+
+#### MVC
+Model - 데이터  
+View - 화면  
+Controller - 기능  
+마찬가지로 데이터와 기능을 분리.
+
+
+
 
 

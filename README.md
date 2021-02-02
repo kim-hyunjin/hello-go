@@ -209,6 +209,23 @@ OOP에서는 객체 간 관계 정의가 더 중요하다.
 인터페이스는 객체 간 상호 관계를 정의 하는 것이다.  
 객체의 기능을 확장하기 용이하게 한다.  
 특정 객체와의 의존성을 제거한다.  
+Go에서는 인터페이스를 구현하고 있음을 명시적으로 표시하지 않는다.  
+=> 덕타이핑 : 오리처럼 걷고, 오리처럼 소리내면 그건 오리다.
+
+### OOD(Object Oriented Design)
+#### SOLID : 지향해야할 목표(이상향)
+- Single Responsibility Principle  
+  : 한 클래스는 하나의 책임만 가져야 한다.
+- Open-Closed Principle  
+  : 소프트웨어 요소는 확장에는 열려 있으나 변경에는 닫혀 있어야 한다.
+- Liskov Substitution Principle  
+  : 프로그램의 객체는 프로그램의 정확성을 깨뜨리지 않으면서 하위 타입의 인스턴스로 바꿀 수 있어야 한다.
+- Interface Segregation Principle  
+  : 특정 클라이언트를 위한 인터페이스 여러 개가 범용 인터페이스 하나보다 낫다.
+- Dependency Inversion Principle  
+  : 프로그래머는 추상화에 의존해야지, 구체화에 의존하면 안된다.  
+
+최종 목표는 객체 간 의존성을 낮추고, 응집도는 높이기 위함이다.
 
 
 

@@ -11,4 +11,5 @@ func main() {
 	bread.PutJam(jam)
 
 	fmt.Println(bread.String())
+	PrintTest()
 }

@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	datastructure.MinHeapTest()
+	datastructure.MapTest()
 }

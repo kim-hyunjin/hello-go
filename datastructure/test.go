@@ -2,6 +2,25 @@ package datastructure
 
 import "fmt"
 
+func MapTest() {
+	mymap := CreateMap()
+	mymap.Add("홍길동", "01012345678")
+	mymap.Add("김철수", "01009876543")
+	mymap.Add("이순신", "01045677654")
+
+	fmt.Println("홍길동 = ", mymap.Get("홍길동"))
+	fmt.Println("김철수 = ", mymap.Get("김철수"))
+	fmt.Println("이순신 = ", mymap.Get("이순신"))
+	fmt.Println("이춘향 = ", mymap.Get("이춘향"))
+}
+
+func HashTest() {
+	fmt.Println("abcde => ", Hash("abcde"))
+	fmt.Println("abcde => ", Hash("abcde"))
+	fmt.Println("qwer => ", Hash("qwer"))
+	fmt.Println("hello, my name is hyunjin => ", Hash("hello, my name is hyunjin"))
+}
+
 func MinHeapTest() {
 	/* 알고리즘 문제
 	[-1, 3, -1, 5, 4] 배열에서 2번째로 큰 값 찾기

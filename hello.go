@@ -1,9 +1,10 @@
 package main
 
 import (
-	"github.com/kim-hyunjin/hello-go/datastructure"
+	_ "github.com/kim-hyunjin/hello-go/datastructure"
+	"github.com/kim-hyunjin/hello-go/thread"
 )
 
 func main() {
-	datastructure.GoMapPractice()
+	thread.Test()
 }

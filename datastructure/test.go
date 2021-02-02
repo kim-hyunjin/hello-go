@@ -149,12 +149,12 @@ func BinaryTreeTest() {
 	tree.Root.AddNode(9)
 
 	/*
-			5
+			      5
 		        /\
 		       3  8
 		      /\ /\
 		     2 4 7 10
-			/  /
+			      /  /
 		       6  9
 
 	*/
@@ -198,7 +198,7 @@ func TreeTest() {
 		}
 	}
 	/*
-			1
+			      1
 		      / | \
 		     2  3  4
 		   /\  /\  /\

@@ -197,5 +197,7 @@ v := <- a // Pop
 - Fixed Sized
 - Queue
 
+### Select
+여러 개의 채널을 동시에 기다릴 수 있도록 해준다.
 
 

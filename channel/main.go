@@ -24,5 +24,6 @@ func main() {
 
 	// fmt.Println("end of program")
 
-	CarFactoryTest()
+	// FactoryTest()
+	SelectTest()
 }

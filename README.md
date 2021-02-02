@@ -181,9 +181,21 @@ Go는 OS가 관리하는 쓰레드를 포장해서 Go Thread를 만듦.
   - Go에서는 channel 이란 것을 제공(일종의 queue)
 
 ### Channel
-특징
+Go에서 제공하는 기본 자료구조  
+```
+var a chan int
+var b chan string
+
+size := 10
+a := make(chan int, size) // 사이즈는 고정됨. 사이즈를 지정하지 않으면 사이즈가 0개 짜리 channel이 만들어진다.
+
+a <- 10 // Push
+v := <- a // Pop
+```
+#### 특징
 - Thread Safe
-- Fixed size queue
+- Fixed Sized
+- Queue
 
 
 

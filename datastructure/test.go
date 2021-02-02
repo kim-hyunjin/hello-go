@@ -2,6 +2,64 @@ package datastructure
 
 import "fmt"
 
+type Key struct {
+	v int
+}
+
+type Value struct {
+	v int
+}
+
+func GoMapPractice() {
+	// var m1 map[int]string
+	// var m2 map[Key]Value
+	// var m3 map[Key]*Value
+	var m map[string]string // 대괄호 안에 key 타입, 밖에 value 타입
+	m = make(map[string]string)
+	m["홍길동"] = "멋쟁이" // map[key] = value
+	fmt.Println(m["홍길동"])
+
+	m1 := make(map[int]string)
+	m1[0] = "홍길동"
+	m1[1] = "철수"
+	m1[2] = "영희"
+	fmt.Println(m1[0])
+	fmt.Println("m1[99] = ", m1[99]) // string의 기본형태인 빈 문자열이 리턴됨
+
+	m2 := make(map[int]int)
+	m2[0] = 123
+	fmt.Println(m2[99]) // int의 기본값인 0이 출력됨
+
+	// 위와 같은 성질을 이용해 Set을 만들 수 있다.
+	// 값이 존재하는지 확인하기
+	m3 := make(map[int]bool)
+
+	m3[0] = true
+	m3[2] = false
+	fmt.Println(m3[0])
+	fmt.Println(m3[1]) // bool의 기본값인 false가 출력됨
+	fmt.Println(m3[2]) // 다만 직접 설정한 값인지 기본값인지 구분이 안된다.
+
+	v1, isExist := m3[2] // go에서는 두번째 리턴값으로 실제 존재하는 bool형값을 리턴한다.
+	fmt.Println(v1, isExist)
+	v2, isExist := m3[3]
+	fmt.Println(v2, isExist)
+
+	// 맵에서 값 삭제하기
+	delete(m2, 0)
+	v, isExist := m2[0]
+	fmt.Println(v, isExist)
+
+	// map 순회하기
+	m2[2] = 2
+	m2[4] = 4
+	m2[10] = 10
+	m2[20] = 20
+	for key, value := range m2 { // key 순서대로 나오진 않는다.
+		fmt.Println(key, " = ", value)
+	}
+}
+
 func MapTest() {
 	mymap := CreateMap()
 	mymap.Add("홍길동", "01012345678")

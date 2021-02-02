@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	datastructure.MapTest()
+	datastructure.GoMapPractice()
 }

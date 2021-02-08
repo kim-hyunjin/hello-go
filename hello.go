@@ -2,9 +2,10 @@ package main
 
 import (
 	_ "github.com/kim-hyunjin/hello-go/datastructure"
-	"github.com/kim-hyunjin/hello-go/thread"
+	forexam "github.com/kim-hyunjin/hello-go/forexam"
+	_ "github.com/kim-hyunjin/hello-go/thread"
 )
 
 func main() {
-	thread.DeadLockTest()
+	forexam.WeirdGugudan()
 }

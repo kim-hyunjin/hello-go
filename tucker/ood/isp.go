@@ -22,7 +22,7 @@ func (u *User) Talk() {
 
 }
 
-func MoveTo(a Actor) { // 움직임을 관장하는 메소드
+func MoveTo1(a Actor) { // 움직임을 관장하는 메소드
 	a.Attack() // 그 안에서 공격 메소드를 호출할 수 있다. ==> isp와 srp 모두 위반
 }
 
@@ -39,6 +39,6 @@ type Movable interface {
 	Move()
 }
 
-func MoveTo(a Movable) {
+func MoveTo2(a Movable) {
 	a.Move() // Move만 호출 가능
 }

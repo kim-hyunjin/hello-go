@@ -19,3 +19,9 @@ $ go doc rsc.io/quote/v3
 ```
 $ go list -m -versions rsc.io/sampler
 ```
+
+### 특정 버전의 패키지 가져오기
+
+```
+$ get rsc.io/sampler@v1.3.1
+```

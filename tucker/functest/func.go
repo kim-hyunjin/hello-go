@@ -16,20 +16,21 @@ func Fun2(x int) {
 		return
 	}
 	fmt.Printf("Fun2(%d) before call Fun2(%d)\n", x, x-1)
-	Fun2(x-1)
+	Fun2(x - 1)
 	fmt.Printf("Fun2(%d) after call Fun2(%d)\n", x, x-1)
 }
 
-func Sum(x, s int) int { 
+func Sum(x, s int) int {
 	if x == 0 {
 		return s
 	}
 	s += x
 	return Sum(x-1, s)
 }
+
 // 모든 재귀호출은 반복문으로 바꿀 수 있다.
 func Sum2(x, y int) int {
-	for i:= 1; i <= x; i++ {
+	for i := 1; i <= x; i++ {
 		y += i
 	}
 	return y

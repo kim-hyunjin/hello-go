@@ -10,4 +10,12 @@
 
 ### package doc 읽기
 
+```
 $ go doc rsc.io/quote/v3
+```
+
+### package에서 사용가능한 버전들 확인하기
+
+```
+$ go list -m -versions rsc.io/sampler
+```

@@ -34,6 +34,15 @@ const (
 	ㄹ			// 9
 )
 
+const (
+	_ = iota
+	kb = 1 << (iota * 10)
+	mb
+	gb
+	tb
+	pb
+)
+
 func main() {
 	fmt.Println("JAN:", JAN)
 	fmt.Println("JUL:", JUL)

@@ -28,4 +28,33 @@ func main() {
 	y:= []int{123, 456, 789}
 	x = append(x, y...)
 	fmt.Println(x)
+
+	// delete element
+	x = append(x[:2], x[4:]...)
+	fmt.Println(x)
+
+	// make - initialize slice, map, chan
+	z := make([]int, 10, 12) // type, len, cap
+	fmt.Println(z)
+	fmt.Println(len(z)) // 10
+	fmt.Println(cap(z)) // 12
+	z[0] = 42
+	z[9] = 999
+
+	z = append(z, 2342)
+
+	fmt.Println(z)
+	fmt.Println(len(z)) // 11
+	fmt.Println(cap(z)) // 12
+
+	z = append(z, 2342)
+	fmt.Println(z)
+	fmt.Println(len(z)) // 12
+	fmt.Println(cap(z)) // 12
+
+	z = append(z, 2342)
+	fmt.Println(z)
+	fmt.Println(len(z)) // 13
+	fmt.Println(cap(z)) // 24, cap is doubled
+
 }

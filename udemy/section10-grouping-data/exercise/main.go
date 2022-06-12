@@ -64,6 +64,7 @@ func exercise5() {
 func exercise6() {
 	states := make([]string, 50)
 
+	/*
 	states = append(states, ` Alabama`, ` Alaska`, ` Arizona`, ` Arkansas`, ` California`, ` Colorado`, ` Connecticut`, `
 	Delaware`, ` Florida`, ` Georgia`, ` Hawaii`, ` Idaho`, ` Illinois`, ` Indiana`, ` Iowa`, ` Kansas`, `
 	Kentucky`, ` Louisiana`, ` Maine`, ` Maryland`, ` Massachusetts`, ` Michigan`, ` Minnesota`, `
@@ -72,13 +73,41 @@ func exercise6() {
 	` Pennsylvania`, ` Rhode Island`, ` South Carolina`, ` South Dakota`, ` Tennessee`, ` Texas`, `
 	Utah`, ` Vermont`, ` Virginia`, ` Washington`, ` West Virginia`, ` Wisconsin`, ` Wyoming`,)
 
+	fmt.Println(len(states)) // 100
+	fmt.Println(cap(states)) // 112
+*/
+	y := []string{` Alabama`, ` Alaska`, ` Arizona`, ` Arkansas`, ` California`, ` Colorado`, ` Connecticut`, `
+	Delaware`, ` Florida`, ` Georgia`, ` Hawaii`, ` Idaho`, ` Illinois`, ` Indiana`, ` Iowa`, ` Kansas`, `
+	Kentucky`, ` Louisiana`, ` Maine`, ` Maryland`, ` Massachusetts`, ` Michigan`, ` Minnesota`, `
+	Mississippi`, ` Missouri`, ` Montana`, ` Nebraska`, ` Nevada`, ` New Hampshire`, ` New Jersey`,
+	` New Mexico`, ` New York`, ` North Carolina`, ` North Dakota`, ` Ohio`, ` Oklahoma`, ` Oregon`,
+	` Pennsylvania`, ` Rhode Island`, ` South Carolina`, ` South Dakota`, ` Tennessee`, ` Texas`, `
+	Utah`, ` Vermont`, ` Virginia`, ` Washington`, ` West Virginia`, ` Wisconsin`, ` Wyoming`,}
+
+	/*
+	// use copy instead of loop
+	for i, v := range y {
+		states[i] = v
+	}
+	*/
+
+	copied := copy(states, y)
+	fmt.Println("copied: ", copied)
+
 	fmt.Println(states)
-	fmt.Println(len(states))
-	fmt.Println(cap(states))
+	fmt.Println(len(states)) // 50
+	fmt.Println(cap(states)) // 50
 
 	for i := 0; i < len(states); i++ {
 		fmt.Println(states[i])
 	}
+
+	/*
+	states[51] = "elsewhere" // index out of range
+	fmt.Println(states)
+	fmt.Println(len(states))
+	fmt.Println(cap(states))
+	*/
 }
 
 func exercise7() {
@@ -103,7 +132,8 @@ func exercise8() {
 
 	
 
-	for _, v := range fav {
+	for k, v := range fav {
+		fmt.Println("This is the record for key: ", k)
 		for i, v2 := range v {
 			fmt.Println("\t", i, v2)
 		}

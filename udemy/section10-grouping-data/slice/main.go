@@ -57,4 +57,12 @@ func main() {
 	fmt.Println(len(z)) // 13
 	fmt.Println(cap(z)) // 24, cap is doubled
 
+	// multi-diemnsional slice
+	jb := []string{"James", "Bond", "Chocolate", "martini"}
+	fmt.Println(jb)
+	mp := []string{"Miss", "Moneypenny", "Strawberry", "Hazelnut"}
+	fmt.Println(mp)
+
+	xp := [][]string{jb, mp}
+	fmt.Println(xp)
 }

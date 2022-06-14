@@ -1,3 +1,6 @@
 go 1.18
 
-use ./section14-function
+use (
+	./section14-function
+	./section17-pointer
+)

@@ -4,4 +4,5 @@ use (
 	./section14-function
 	./section17-pointer
 	./section18-application
+	./section20-concurrency
 )

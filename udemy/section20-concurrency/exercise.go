@@ -6,6 +6,7 @@ import (
 	"sync"
 )
 
+// use wait group
 func exercise1() {
 
 	fmt.Println("begin cpu", runtime.NumCPU())
@@ -30,4 +31,29 @@ func exercise1() {
 	fmt.Println("about to exit")
 	fmt.Println("end cpu", runtime.NumCPU())
 	fmt.Println("end gs", runtime.NumGoroutine())
+}
+
+// create race condition
+func exercise2() {
+	incrementor := 0
+
+
+	gs := 100
+	var wg sync.WaitGroup
+	wg.Add(gs)
+
+	for i := 0; i <gs; i++ {
+		go func(index int) {
+			fmt.Println("read by", index, " : ", incrementor)
+			newVal := incrementor
+			runtime.Gosched()
+			newVal++
+			incrementor = newVal
+			fmt.Println("done by", index, " : ", incrementor)
+			wg.Done()
+		}(i)
+	}
+
+	wg.Wait()
+	fmt.Println("end value:", incrementor)
 }

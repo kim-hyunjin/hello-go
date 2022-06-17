@@ -6,7 +6,7 @@ func usage() {
 	c := make(chan int)
 
 	go sender(c)
-	
+
 	receiver(c)
 
 	fmt.Println("about to exit")

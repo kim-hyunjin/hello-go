@@ -13,11 +13,11 @@ func directional_exam() {
 }
 
 func directional_exam2() {
-	c:= make(chan int)
+	c := make(chan int)
 	cr := make(<-chan int) // receive
 	cs := make(chan<- int) // send
-	
-	fmt.Printf("%T\n", c)	// chan int
+
+	fmt.Printf("%T\n", c)  // chan int
 	fmt.Printf("%T\n", cr) // <-chan int
 	fmt.Printf("%T\n", cs) // chan<- int
 }

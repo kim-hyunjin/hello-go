@@ -5,4 +5,5 @@ use (
 	./section17-pointer
 	./section18-application
 	./section20-concurrency
+	./section22-channel
 )

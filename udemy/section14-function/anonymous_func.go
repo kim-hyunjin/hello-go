@@ -2,7 +2,7 @@ package section14function
 
 import "fmt"
 
-func AnonymousFunc() {
+func anonymousFunc() {
 	func() {
 		fmt.Println("anonymous func ran")
 	}()

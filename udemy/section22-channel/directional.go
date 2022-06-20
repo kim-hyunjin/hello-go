@@ -2,7 +2,7 @@ package section22channel
 
 import "fmt"
 
-func directional_exam() {
+func directionalExam() {
 	c := make(<-chan int, 2) // receive only
 	// c <- 42 // error
 	// c <- 43
@@ -12,7 +12,7 @@ func directional_exam() {
 	fmt.Printf("%T\n", c)
 }
 
-func directional_exam2() {
+func directionalExam2() {
 	c := make(chan int)
 	cr := make(<-chan int) // receive
 	cs := make(chan<- int) // send

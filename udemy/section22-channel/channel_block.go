@@ -3,7 +3,7 @@ package section22channel
 import "fmt"
 
 // not work
-func blocked_exam() {
+func blockedExam() {
 	c := make(chan int)
 
 	c <- 42 // blocked here
@@ -12,7 +12,7 @@ func blocked_exam() {
 }
 
 // work
-func blocked_exam2() {
+func blockedExam2() {
 	c := make(chan int)
 
 	go func() {
@@ -23,7 +23,7 @@ func blocked_exam2() {
 }
 
 // buffer channel
-func blocked_exam3() {
+func blockedExam3() {
 	c := make(chan int, 2)
 	c <- 42
 	c <- 43

@@ -7,7 +7,7 @@ import (
 
 func TestGreeting(t *testing.T) {
 	names := []string{"kim", "lee", "cho"}
-	s := Greeting("Hello: ", names...)
+	s := greeting("Hello: ", names...)
 	fmt.Println(s)
 
 	if s != "Hello: kim, lee, cho" {

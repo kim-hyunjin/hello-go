@@ -5,7 +5,7 @@ import "fmt"
 var x int
 
 // code block enclosing some variable
-func ClosureExam() {
+func closureExam() {
 	fmt.Println(x) // 0
 	x++
 	fmt.Println(x) // 1

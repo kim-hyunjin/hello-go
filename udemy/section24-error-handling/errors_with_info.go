@@ -7,6 +7,7 @@ import (
 	"math"
 )
 
+// ErrNorgateMath square root of negative number
 var ErrNorgateMath = errors.New("norgate math: square root of negative number")
 
 func withInfoExam() {
@@ -38,6 +39,7 @@ func sqrt2(f float64) (float64, error) {
 	return math.Sqrt(f), nil
 }
 
+// MyError just simple custom error exam
 type MyError struct {
 	msg string
 }

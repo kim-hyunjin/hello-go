@@ -1,6 +1,6 @@
 package section14function
 
-func ReturnFunc() func() int {
+func returnFunc() func() int {
 	f := func() int {
 		return 451
 	}

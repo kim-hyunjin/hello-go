@@ -1,6 +1,6 @@
 package section14function
 
-func Greeting(prefix string, who ...string) string {
+func greeting(prefix string, who ...string) string {
 	s := prefix
 	for i, v := range who {
 		s += v

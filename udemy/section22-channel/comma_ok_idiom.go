@@ -57,9 +57,8 @@ func receiveNumbers2(e, o <-chan int, q <-chan bool) {
 			if !ok {
 				fmt.Println("from comma ok", i, ok) // false, false
 				return
-			} else {
-				fmt.Println("from comma ok", i)
 			}
+			fmt.Println("from comma ok", i)
 		}
 	}
 }
@@ -87,9 +86,8 @@ func receiveNumbers3(e, o, q <-chan int) {
 			if !ok {
 				fmt.Println("from comma ok", i, ok) // 0, false
 				return
-			} else {
-				fmt.Println("from comma ok", i)
 			}
+			fmt.Println("from comma ok", i)
 		}
 	}
 }

@@ -2,6 +2,7 @@ package section14function
 
 import "fmt"
 
+// FuncExpression 함수를 변수처럼
 func FuncExpression() {
 	f := func() {
 		fmt.Println("my first func expression")

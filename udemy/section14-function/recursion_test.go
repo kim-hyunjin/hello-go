@@ -3,7 +3,7 @@ package section14function
 import "testing"
 
 func TestRecursion(t *testing.T) {
-	RecursionExam()
+	recursionExam()
 
 	n := factorial(4)
 	if n != 24 {

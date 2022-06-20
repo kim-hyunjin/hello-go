@@ -6,7 +6,7 @@ type human interface {
 	speak() string
 }
 
-func HumanSpeak(h human) string {
+func humanSpeak(h human) string {
 	return h.speak()
 }
 
@@ -16,7 +16,7 @@ type contact struct {
 }
 
 // every type implements empty interface
-func SwitchOnType(x interface{}) string {
+func switchOnType(x interface{}) string {
 	switch x.(type) { // this is an assert; asserting, "x is of this type"
 	case int:
 		fmt.Println("int")

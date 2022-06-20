@@ -8,7 +8,7 @@ func main() {
 
 	for a < 10 {
 		fmt.Printf("%d ", a)
-		a += 1		
+		a++
 	}
 
 	fmt.Println()

@@ -12,6 +12,7 @@ const (
 	three = iota	// 1
 )
 
+// JAN to DEC using itoa
 const (
 	JAN = iota + 1
 	FEB

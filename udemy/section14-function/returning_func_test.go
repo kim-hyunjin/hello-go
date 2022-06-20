@@ -7,12 +7,12 @@ import (
 
 func TestReturningFunc(t *testing.T) {
 
-	f := ReturnFunc()
+	f := returnFunc()
 
 	num := f()
 
 	fmt.Printf("%T\n", f)
-	fmt.Println(ReturnFunc()())
+	fmt.Println(returnFunc()())
 
 	if num != 451 {
 		t.Error("not valid number")

@@ -2,6 +2,7 @@ package section14function
 
 import "fmt"
 
+// CallbackExam show how callback works
 func CallbackExam() {
 
 	ii := []int{1, 2, 3, 4, 5, 6, 7, 8, 10}

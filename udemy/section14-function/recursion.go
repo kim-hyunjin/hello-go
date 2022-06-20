@@ -2,7 +2,7 @@ package section14function
 
 import "fmt"
 
-func RecursionExam() {
+func recursionExam() {
 	n := factorial(4)
 	fmt.Println(n)
 

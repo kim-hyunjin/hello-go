@@ -7,4 +7,5 @@ use (
 	./section20-concurrency
 	./section22-channel
 	./section24-error-handling
+	./section28-testing
 )
